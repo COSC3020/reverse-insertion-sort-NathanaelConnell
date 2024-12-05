@@ -4,11 +4,11 @@ Consider the code for insertion sort we covered in class:
 
 ```javascript
 function insertionSort(arr) {
-  for(var i = 1; i < arr.length; i++) {
+  for (var i = 1; i < arr.length; i++) {
     var val = arr[i];
     var j;
-    for(j = i; j > 0 && arr[j-1] > val; j--) {
-      arr[j] = arr[j-1];
+    for (j = i; j > 0 && arr[j - 1] > val; j--) {
+      arr[j] = arr[j - 1];
     }
     arr[j] = val;
   }
@@ -36,3 +36,7 @@ constant factors.
 Describe your reasoning and the conclusion you've come to. Your reasoning is
 most important -- you can easily find the answer, but you need to demonstrate
 that you've understood the concept. Add your answer to this markdown file.
+
+The average case time complexity of insertion sort is big theta (n^2) which is similar to its worst case complexity. Each element must be inserted into the middle of the already sorted portion of the array, requiring about half as many comparisons as the elements position in the array. For the i-th element the inner loop executes about i/2 times on average. Summing this over all n - 1 iterations of the outer loop gives a total of (1/2) \* (n-1)n / 2 = (n^2 - n)/4 comparisons which simplifies to big theta n^2 asymptotically. The cost of shifting elements adds a similar contribution but does not affect the asymptotic complexity so the average case involves a quadratic number of operations.
+
+"I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
